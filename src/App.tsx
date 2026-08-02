@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ReactDOM from 'react-dom/client';
 import { Search, Sun, Cloud, CloudRain, Wind, Droplets, Thermometer, AlertCircle, Calendar } from 'lucide-react';
 
 interface WeatherData {
@@ -187,5 +188,14 @@ export default function App() {
         )}
       </div>
     </div>
+  );
+}
+
+const rootElement = document.getElementById('root');
+if (rootElement) {
+  ReactDOM.createRoot(rootElement).render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
   );
 }
